@@ -1,0 +1,66 @@
+<+	+>	!comp!	!exe!
+%        File: !comp!expand("%:p:t")!comp!
+%     Created: !comp!strftime("%a %b %d %I:00 %p %Y ").substitute(strftime('%Z'), '\<\(\w\)\(\w*\)\>\(\W\|$\)', '\1', 'g')!comp!
+% Last Change: !comp!strftime("%a %b %d %I:00 %p %Y ").substitute(strftime('%Z'), '\<\(\w\)\(\w*\)\>\(\W\|$\)', '\1', 'g')!comp!
+%
+%\documentclass[11pt,handout]{beamer}
+\documentclass{beamer}
+\usetheme[white]{Wisconsin}
+%\title[short title]{long title}
+\title[<+  +>]{<++>}
+%\subtitle[short subtitle]{long subtitle}
+\subtitle[<++>]{<++>}
+%\author[short name]{long name}
+\author[<++>]{<++>}
+%\date[short date]{long date}
+\date[<++>]{<++>}
+%\institution[short name]{long name}
+\institute[UW-Madison]{University of Wisconsin-Madison}
+
+
+
+\begin{document}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% From uw-beamer Here's a handy bit of code to place at 
+%% the beginning of your presentation (after \begin{document}):
+\newcommand*{\alphabet}{ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz}
+\newlength{\highlightheight}
+\newlength{\highlightdepth}
+\newlength{\highlightmargin}
+\setlength{\highlightmargin}{2pt}
+\settoheight{\highlightheight}{\alphabet}
+\settodepth{\highlightdepth}{\alphabet}
+\addtolength{\highlightheight}{\highlightmargin}
+\addtolength{\highlightdepth}{\highlightmargin}
+\addtolength{\highlightheight}{\highlightdepth}
+\newcommand*{\Highlight}{\rlap{\textcolor{HighlightBackground}{\rule[-\highlightdepth]{\linewidth}{\highlightheight}}}}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%--------------------------------%%
+\frame{
+\titlepage
+}
+%%--------------------------------%%
+\begin{frame}
+\frametitle{Outline}
+\tableofcontents[part=1,pausesections]
+\end{frame}<++>
+
+\section{<++>}<++>
+\subsection{<++>}<++>
+%%--------------------------------%%
+\begin{frame}[<+ctb!+>]
+\frametitle{<++>}
+\end{frame}<++>
+\subsection{<++>}<++>
+
+%%--------------------------------%%
+\begin{frame}[<+ctb!+>]
+\frametitle{<++>}
+\end{frame}<++>
+
+%%--------------------------------%%
+
+
+\end{document}
+
+

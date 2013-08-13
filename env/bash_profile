@@ -1,0 +1,23 @@
+source ~/.bashrc
+
+# This is where Katy has added stuff by herself... 
+CYCLUS_SRC_DIR="/Users/khuff/repos/cyclus/src"
+export CYCLUS_SRC_DIR
+
+CYDER_PATH="/Users/khuff/repos/cyder"
+export CYDER_PATH
+
+
+## This makes the terminal tell me where the fuck I am in git
+parse_git_branch() {
+  git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/(\1)/'
+}
+
+
+# Setting PATH for EPD-7.2-2
+# The orginal version is saved in .bash_profile.pysave
+PATH="/Library/Frameworks/EPD64.framework/Versions/Current/bin:${PATH}"
+export PATH
+
+MKL_NUM_THREADS=1
+export MKL_NUM_THREADS

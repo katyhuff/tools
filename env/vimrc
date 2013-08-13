@@ -1,0 +1,157 @@
+"Katy's .vimrc preferences"
+"10/2008"
+
+"Don't forget to show the line number"
+"set nonumber"
+
+"Set genius tabsize to 2 spaces"
+set softtabstop=2
+set shiftwidth=2
+set expandtab
+
+"VIM is not a word processor. Wrap the lines for paul. "
+"Adds the w flag to the format options so that reformatting occurs when lines are too long."
+set formatoptions+=w
+
+"Sets the ideal maximum width of text"
+"To implement this, give your document a gggqG "
+set textwidth=79
+
+"Enable colors"
+syntax enable
+
+"When typing a parenthesis or brace, jump to matching parenthesis curly brace"
+set showmatch
+
+"search while you type, be sure to press enter when complete..."
+set incsearch
+
+"for search and replace, automatically replace all in a line"
+set gdefault
+
+"I occasionally misspell the word occasionally..."
+abbreviate occaisionally occasionally
+abbreviate equillibrium equilibrium
+abbreviate lisences licenses
+
+"vim intelligently guesses the correct indentation, like John O'Donnell"
+set nocindent
+set smartindent
+set autoindent
+"set paste"
+filetype indent on
+"filetype plugin indent on" 
+
+"number of lines of command history"
+set history=100
+
+"number of undos"
+set undolevels=200
+
+"include magic patterns, which are just extended regular expressions"
+set magic
+
+"do not jump to the first character with up down sorts of commands"
+set nostartofline
+
+"show line and column information at the bottom of the file"
+set ruler
+
+" make backup files " 
+set backup
+
+" where to put backup files "
+set backupdir=~/.vim/backup 
+
+" share windows clipboard"
+"set clipboard+=unnamed 
+
+" directory to place swap files in"
+set directory=~/.vim/tmp 
+
+" support all three, in this order"
+set fileformats=unix,dos,mac 
+
+" you can change buffers without saving"
+set hidden 
+
+" use mouse everywhere"
+set mouse=a
+
+" fold and unfold with \f
+map <Leader>f za
+" update folds with \F
+map <Leader>F zx
+
+" map tab sp to set paste
+noremap <Tab>pp :set paste<CR>
+
+" map tab np to set nopaste
+noremap <Tab>np :set nopaste<CR>
+
+
+" -------------------- For Vim-Taglist -------------------------- "
+" REQUIRED. This allows ctags to know what's up 
+filetype plugin on
+
+" Maps the key to the TlistToggle command
+nnoremap <silent> <Tab>t :TlistToggle<CR>
+
+" To automatically close the taglist window when a tag or file is selected
+let Tlist_Close_On_Select=1
+
+" To exit Vim when only the taglist window is present
+"let Tlist_Exit_OnlyWindow=1
+
+" Show tag scope next to tag name
+let Tlist_Display_Tag_Scope=1
+
+
+" -------------------- For Vim-Omni-Completion ---------------- "
+filetype plugin on
+set ofu=syntaxcomplete#Complete
+
+
+" -------------------- For Vim-LaTeX -------------------------- "
+
+" REQUIRED. This makes vim invoke Latex-Suite when you open a tex file.
+filetype plugin on
+
+" IMPORTANT: grep will sometimes skip displaying the file name if you
+" search in a singe file. This will confuse Latex-Suite. Set your grep
+" program to always generate a file-name.
+set grepprg=grep\ -nH\ $*
+
+" OPTIONAL: Starting with Vim 7, the filetype of empty .tex files defaults to
+" 'plaintex' instead of 'tex', which results in vim-latex not being loaded.
+" The following changes the default filetype back to 'tex':
+let g:tex_flavor='latex'
+
+"set winaltkeys=no
+set iskeyword+=:
+
+
+" -------------------- End Vim-LaTeX -------------------------- "
+
+
+
+"VisualSearch means you can press * or # to search
+" for the current selection "
+" courtesy of Michael Naumann"
+function! VisualSearch(direction) range
+  let l:saved_reg = @"
+  execute "normal! vgvy"
+  let l:pattern = escape(@", '\\/.*$^~[]')
+  let l:pattern = substitute(l:pattern, "\n$", "", "")
+  if a:direction == 'b'
+    execute "normal ?" . l:pattern . "^M"
+  else
+    execute "normal /" . l:pattern . "^M"
+  endif
+  let @/ = l:pattern
+  let @" = l:saved_reg
+endfunction
+
+vnoremap <silent> * :call VisualSearch('f')<CR>
+vnoremap <silent> # :call VisualSearch('b')<CR>
+

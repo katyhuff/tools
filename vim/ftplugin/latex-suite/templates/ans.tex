@@ -1,0 +1,44 @@
+<+      +>      !comp!  !exe!
+%        File: !comp!expand(``%:p:t'')!comp!
+%     Created: !comp!strftime(``%a %b %d %I:00 %p %Y '').substitute(strftime('%Z'), '\<\(\w\)\(\w*\)\>\(\W\|$\)', '\1', 'g')!comp!
+% Last Change: !comp!strftime(``%a %b %d %I:00 %p %Y '').substitute(strftime('%Z'), '\<\(\w\)\(\w*\)\>\(\W\|$\)', '\1', 'g')!comp!
+
+\documentclass{anstrans}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\title{<+ title +>}
+\author{<+ First +> ~<+ Last +>}
+
+%% uncomment these next five only if using anstrans
+\institute{Department of Nuclear Engineering \& Engineering Physics, University of Wisconsin, Madison, WI, 53706}
+\email{khuff@cae.wisc.edu}
+\usepackage{graphicx}
+\usepackage{booktabs} % nice rules for tables
+\usepackage{microtype} % if using PDF
+\newcommand{\units}[1] {\:\text{#1}}%
+\newcommand{\SN}{S$_N$}%{S$_\text{N}$}%{$S_N$}%
+
+\date{}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{document}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Introduction}
+<+ +> 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Results and Analysis}
+<+ +>
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{<+ +>}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{<+ +>}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Conclusions}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\nocite{<+ +>}
+\bibliographystyle{ans}
+\bibliography{bibliography}
+\end{document}
