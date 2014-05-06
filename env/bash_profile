@@ -1,11 +1,30 @@
 source ~/.bashrc
 
-# This is where Katy has added stuff by herself... 
-CYCLUS_SRC_DIR="/Users/khuff/repos/cyclus/src"
-export CYCLUS_SRC_DIR
+export EC2_HOME=~/.ec2
+PATH=${PATH}:EC2_HOME/bin
+export EC2_PRIVATE_KEY=pk-XEGYRWMVN7QFYPE432XO5RDBUP4QL62Q.pem
+export EC2_CERT=cert-XEGYRWMVN7QFYPE432XO5RDBUP4QL62Q.pem
+export JAVA_HOME=/System/Library/Frameworks/JavaVM.framework/Home/
+  
 
-CYDER_PATH="/Users/khuff/repos/cyder"
-export CYDER_PATH
+MKL_NUM_THREADS=1
+export MKL_NUM_THREADS
+
+##
+# Your previous /Users/khuff/.bash_profile file was backed up as /Users/khuff/.bash_profile.macports-saved_2010-12-24_at_20:11:48
+##
+
+# MacPorts Installer addition on 2010-12-24_at_20:11:48: adding an appropriate PATH variable for use with MacPorts.
+export PATH=/opt/local/bin:/opt/local/sbin:$PATH
+# Finished adapting your PATH environment variable for use with MacPorts.
+
+
+# This is where Katy has added stuff by herself... 
+HDF5_ROOT="/opt/local/lib"
+export HDF5_ROOT
+
+CYCLUS_SRC_DIR="Users/khuff/repos/cyclus/src"
+export CYCLUS_SRC_DIR
 
 
 ## This makes the terminal tell me where the fuck I am in git
@@ -14,10 +33,23 @@ parse_git_branch() {
 }
 
 
-# Setting PATH for EPD-7.2-2
-# The orginal version is saved in .bash_profile.pysave
-PATH="/Library/Frameworks/EPD64.framework/Versions/Current/bin:${PATH}"
+##
+# Your previous /Users/khuff/.bash_profile file was backed up as /Users/khuff/.bash_profile.macports-saved_2012-10-20_at_07:14:44
+##
+
+# MacPorts Installer addition on 2012-10-20_at_07:14:44: adding an appropriate PATH variable for use with MacPorts.
+export PATH=/opt/local/bin:/opt/local/sbin:$PATH
+# Finished adapting your PATH environment variable for use with MacPorts.
+
+# setting the path for mactex
+PATH="/usr/texbin:${PATH}"
 export PATH
 
-MKL_NUM_THREADS=1
-export MKL_NUM_THREADS
+# setting up the path for adb
+PATH="${PATH}:/opt/local/etc/adt-bundle-mac-x86_64/sdk/platform-tools"
+
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
+
+# setting up the python path
+PYTHONPATH="/Users/khuff/repos/cyder/output:${PYTHONPATH}"
+export PYTHONPATH
