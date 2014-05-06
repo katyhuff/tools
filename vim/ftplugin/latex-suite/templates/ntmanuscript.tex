@@ -1,0 +1,39 @@
+\documentclass{ntmanuscript}
+\usepackage[acronym,toc]{glossaries}
+\include{acros}
+\makeglossaries
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\title{<+ TITLE +>}
+
+% Authors. Separated by commas
+\author{KATHRYN D.~HUFF $^1$, W. MARK~NUTT $^2$}
+
+% Institutes of the authors
+\institute{$^1$University of California, Department of Nuclear Engineering
+  Berkeley, CA, 94720\\
+$^2$Argonne National Laboratory, Nuclear Engineering Division, 60439}
+
+% Information concerning the person submitting the manuscript
+\submitter{<+ name +>}
+\submitteraddress{<+ complete mailing address +>}
+\submitteremail{<+ email address +>}
+
+
+% No more than three keywords, though each can be a phrase
+\keywords{<+ keyword one +>, <+ keyword two +>, <+ keyword three +> }
+
+\usepackage{graphicx}
+\usepackage{booktabs} % nice rules for tables
+\usepackage{microtype} % if using PDF
+\newcommand{\units}[1] {\:\text{#1}}%
+\newcommand{\SN}{S$_N$}%{S$_\text{N}$}%{$S_N$}%
+
+\date{}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{document}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\bibliographystyle{ans}
+\bibliography{bibliography}
+\end{document}

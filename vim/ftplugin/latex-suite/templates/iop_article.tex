@@ -1,0 +1,45 @@
+<+	+>	!comp!	!exe!
+%        File: !comp!expand("%:p:t")!comp!
+%     Created: !comp!strftime("%a %b %d %I:00 %p %Y ").substitute(strftime('%Z'), '\<\(\w\)\(\w*\)\>\(\W\|$\)', '\1', 'g')!comp!
+% Last Change: !comp!strftime("%a %b %d %I:00 %p %Y ").substitute(strftime('%Z'), '\<\(\w\)\(\w*\)\>\(\W\|$\)', '\1', 'g')!comp!
+%
+\documentclass[12pt]{iopart}
+\usepackage{verbatim}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{longtable}
+\usepackage{amsfonts}
+\usepackage[usenames]{color}
+\usepackage[
+naturalnames = true, 
+colorlinks = true, 
+linkcolor = Black,
+anchorcolor = Black,
+citecolor = Black,
+menucolor = Black,
+urlcolor = Blue
+]{hyperref}
+
+%Uncomment next line if AMS fonts required
+\usepackage{iopams}  
+\begin{document}
+
+\title[<+shorttitle+>]{<+longtitle+>}
+\author{Kathryn D. Huff$^1$}
+\address{$^1$University of California Berkeley}
+
+\ead{huff@berkeley.edu}
+
+\begin{abstract}
+  \input{abs}
+\end{abstract}
+
+\vspace{2pc}
+\noindent{\it Keywords}: <+keywords+>
+
+\maketitle
+
+\bibliographystyle{ieeetr}
+\bibliography{bibliography}
+\end{document}
+
