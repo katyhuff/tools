@@ -1,0 +1,7 @@
+[user]
+	name = Katy Huff
+	email = katyhuff@gmail.com
+[core]
+	editor = vi
+[color]
+	ui = true
