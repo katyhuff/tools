@@ -1,5 +1,10 @@
 alias cae="ssh khuff@best-tux.cae.wisc.edu"
 alias bk="ssh huff@berkelium.nuc.berkeley.edu"
+alias brc="ssh huff@hpc.brc.berkeley.edu"
+alias brcdtn="ssh huff@dtn.brc.berkeley.edu"
+
+alias inkscape="/Applications/Inkscape.app/Contents/Resources/bin/inkscape"
+
 alias strom="echo ................... I think you mean Fastmath!"
 alias fastmath!="echo ..................... I think you mean Strom ... "
 alias ls="ls -G"
@@ -7,12 +12,12 @@ alias sl="ls"
 alias ll="ls -l"
 
 alias cdcyclus="cd ~/repos/cyclus/cyclus/src"
-alias mkcyclus="cd ~/repos/cyclus/cyclus/src && python install.py"
+alias mkcyclus="cd ~/repos/cyclus/cyclus && python install.py --prefix=../install"
 alias cyclus="~/repos/cyclus/install/bin/cyclus"
 
 alias cdmore="cd ~/repos/cyclus/cycamore/src"
 alias remore="cd ~/repos/cyclus/cycamore/build&&rm -rf ./*&&cmake -DCMAKE_BUILD_TYPE:STRING=Debug ../src&&ln -s ../input input"
-alias mkmore="cd ~/repos/cyclus/cycamore && python install.py"
+alias mkmore="cd ~/repos/cyclus/cycamore && python install.py --prefix=../install"
 
 alias cdrepo="cd ~/repos/cyder/src"
 alias repo="cd ~/repos/cyder/build&&rm -rf ./*&&cmake -DCMAKE_BUILD_TYPE:STRING=Debug ../src&&ln -s ../input input"
@@ -26,11 +31,25 @@ alias cdpres="cd ~/repos/dissertation/pres"
 alias sqlb="sqlitebrowser"
 alias makeps="dvips -e 0 -f < \!*.dvi >! \!*.ps"
 alias makepdf="dvipdf \!*.dvi"
-alias pres="cd ~/Documents/work/dissertation/wc/pres/&&latex prelimPres&&bibtex prelimPres&&latex prelimPres&&latex prelimPres&&latex prelimPres&&dvipdfmx prelimPres&&open prelimPres.pdf" 
-alias scpthesis="scp ~/Documents/work/dissertation/wc/report/dissertation.pdf khuff@best-tux.cae.wisc.edu:~/public_html/papers/" 
-alias scpres="scp ~/Documents/work/dissertation/wc/pres/prelimPres.pdf khuff@best-tux.cae.wisc.edu:~/public_html/papers/" 
+alias pres="cd ~/Documents/work/dissertation/wc/pres/&&latex prelimPres&&bibtex prelimPres&&latex prelimPres&&latex prelimPres&&latex prelimPres&&dvipdfmx prelimPres&&open prelimPres.pdf"
+alias scpthesis="scp ~/Documents/work/dissertation/wc/report/dissertation.pdf khuff@best-tux.cae.wisc.edu:~/public_html/papers/"
+alias scpres="scp ~/Documents/work/dissertation/wc/pres/prelimPres.pdf khuff@best-tux.cae.wisc.edu:~/public_html/papers/"
 alias tether="cd ~/.tether && ./azilink.sh"
 alias texdir="ln -s ~/.latexmake/Makefile && ln -s ~/.latexmake/target.mk"
-alias sqlb="/Applications/SQLite\ Database\ Browser\ 2.0\ b1.app/Contents/MacOS/sqlitebrowser" 
+alias sqlb="/Applications/SQLite\ Database\ Browser\ 2.0\ b1.app/Contents/MacOS/sqlitebrowser"
 
 alias cdprke="cd ~/repos/pbfhr/prke"
+
+
+alias book="cd ~/repos/book"
+alias bd="cd ~/repos/book-data"
+
+# go to pyrk
+alias rk="cd ~/repos/pyrk/pyrk"
+# go to squirrel
+alias sq="cd ~/repos/projects/squirrel"
+
+# below alias deletes all branches that have been merged into master already
+alias git-clean='git branch --merged master | grep -v "\* master" | xargs -n 1 git branch -d'
+
+alias gbkp="scp huff@berkelium.nuc.berkeley.edu:~/repos/pyrk/pyrk/images/* ~/repos/pyrk/pyrk/bk/"
