@@ -34,10 +34,7 @@ export HDF5_DIR
 HDF5_ROOT="/opt/local"
 export HDF5_ROOT
 
-LD_LIBRARY_PATH="/opt/local/lib:${LD_LIBRARY_PATH}:/usr/local"
-export LD_LIBRARY_PATH
-
-DYLD_FALLBACK_LIBRARY_PATH="/Users/khuff/anaconda/lib:/opt/local/lib:/opt/local:${DYLD_FALLBACK_LIBRARY_PATH}"
+DYLD_FALLBACK_LIBRARY_PATH="/opt/local/lib:/opt/local:/Users/khuff/anaconda/lib${DYLD_FALLBACK_LIBRARY_PATH}"
 export DYLD_FALLBACK_LIBRARY_PATH
 
 CYCLUS_INSTALL_DIR="/Users/khuff/repos/cyclus/install/bin"
@@ -49,7 +46,7 @@ export PATH
 PATH="${HOME}/.rvm/bin:${PATH}" # Add RVM to PATH for scripting
 export PATH
 
-PATH="/Users/khuff/anaconda/bin:/Applications/Inkscape.app/Contents/Resources/bin:${PATH}"
+PATH="/Applications/Inkscape.app/Contents/Resources/bin:${PATH}"
 export PATH
 
 GOPATH="${HOME}/gocode:${HOME}/gocode/bin"
@@ -57,8 +54,15 @@ export GOPATH
 PATH="${GOPATH}:${PATH}:/usr/local/go/bin"
 export PATH
 
-PYTHONPATH="/Users/khuff/repos/openmoc/install/lib/python2.7/site-packages:/Users/khuff/anaconda/lib/python2.7/site-packages:/Users/khuff/repos/cyder/output/:/Users/khuff/repos/cyder/input/:${PYTHONPATH}"
-export PYTHONPATH
+# For PyRK, anaconda, and cyder
+PYTHONPATH="/Users/khuff/anaconda/lib:/Users/khuff/repos/pyrk:/Users/khuff/repos/pyrk/pyrk:/Users/khuff/repos/cyder/output/:/Users/khuff/repos/cyder/input/:${PYTHONPATH}"
+
+# For MOOSE
+PYTHONPATH="/Users/khuff/repos/projects/moose/python:${PYTHONPATH}"
+#export PYTHONPATH
+# For peacock
+PATH="/Users/khuff/repos/projects/moose/gui:${PATH}"
+#export PATH
 
 PYNE_PATH="${PYTHONPATH}"
 export PYNE_PATH
@@ -97,7 +101,7 @@ export LSCOLOR
 
 # uncomment for a colored prompt, if the terminal has the capability; turned
 # off by default to not distract the user: the focus in a terminal window
-# should be on the output of commands, not on the prompt 
+# should be on the output of commands, not on the prompt
 force_color_prompt=yes
 
 if [ -n "$force_color_prompt" ]; then
@@ -140,3 +144,6 @@ export INPUTRC
 JAVA_HOME="/Library/Java/JavaVirtualMachines/jdk1.8.0_40.jdk/Contents/Home"
 export JAVA_HOME
 
+# For Julia
+PATH="${PATH}:/Applications/Julia-0.3.7.app/Contents/Resources/julia/bin/"
+export PATH
