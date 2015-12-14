@@ -1,12 +1,19 @@
 "Katy's .vimrc preferences"
 "10/2008"
+" ---------For Pathogen -------
+" Pathogen load
+call pathogen#infect()
+call pathogen#helptags()
+
+filetype plugin indent on
+syntax on
+let g:pymode_debug=1
+" ---------End Pathogen -------
 
 "Don't forget to show the line number"
 "set nonumber"
 
-"Set genius tabsize to 2 spaces"
-set softtabstop=2
-set shiftwidth=2
+"no t"
 set expandtab
 
 "VIM is not a word processor. Wrap the lines for paul. "
@@ -40,7 +47,7 @@ set smartindent
 set autoindent
 "set paste"
 filetype indent on
-"filetype plugin indent on" 
+"filetype plugin indent on"
 
 "number of lines of command history"
 set history=100
@@ -57,23 +64,23 @@ set nostartofline
 "show line and column information at the bottom of the file"
 set ruler
 
-" make backup files " 
+" make backup files "
 set backup
 
 " where to put backup files "
-set backupdir=~/.vim/backup 
+set backupdir=~/.vim/backup
 
 " share windows clipboard"
-"set clipboard+=unnamed 
+"set clipboard+=unnamed
 
 " directory to place swap files in"
-set directory=~/.vim/tmp 
+set directory=~/.vim/tmp
 
 " support all three, in this order"
-set fileformats=unix,dos,mac 
+set fileformats=unix,dos,mac
 
 " you can change buffers without saving"
-set hidden 
+set hidden
 
 " use mouse everywhere"
 set mouse=a
@@ -91,7 +98,7 @@ noremap <Tab>np :set nopaste<CR>
 
 
 " -------------------- For Vim-Taglist -------------------------- "
-" REQUIRED. This allows ctags to know what's up 
+" REQUIRED. This allows ctags to know what's up
 filetype plugin on
 
 " Maps the key to the TlistToggle command
@@ -132,6 +139,44 @@ set iskeyword+=:
 
 
 " -------------------- End Vim-LaTeX -------------------------- "
+"
+"
+
+
+" -------------------- Delete trailing whitespace -------------------------- "
+" Removes trailing spaces
+function! TrimWhiteSpace()
+    %s/\s\+$//e
+    endfunction
+
+nnoremap <silent> <Leader>rtw :call TrimWhiteSpace()<CR>
+
+"autocmd FileWritePre    * :call TrimWhiteSpace()
+"autocmd FileAppendPre   * :call TrimWhiteSpace()
+"autocmd FilterWritePre  * :call TrimWhiteSpace()
+"autocmd BufWritePre     * :call TrimWhiteSpace()
+
+" -------------------- End whitespace -------------------------- "
+"
+"
+"
+" -------------------- For ASCIIDOC -------------------------- "
+" Show tabs and trailing characters.
+"set listchars=tab:»·,trail:·,eol:¬
+set listchars=tab:»·,trail:·
+set list
+
+" Reformat paragraphs and list.
+nnoremap <Leader>r gq}
+
+" Delete trailing white space and Dos-returns and to expand tabs to spaces.
+nnoremap <Leader>t :set et<CR>:retab!<CR>:%s/[\r \t]\+$//<CR>
+
+autocmd BufRead,BufNewFile *.txt,*.asciidoc,README,TODO,CHANGELOG,NOTES,ABOUT
+        \ setlocal autoindent expandtab tabstop=8 softtabstop=2 shiftwidth=2 filetype=asciidoc
+        \ textwidth=70 wrap formatoptions=tcqn
+        \ formatlistpat=^\\s*\\d\\+\\.\\s\\+\\\\|^\\s*<\\d\\+>\\s\\+\\\\|^\\s*[a-zA-Z.]\\.\\s\\+\\\\|^\\s*[ivxIVX]\\+\\.\\s\\+
+        \ comments=s1:/*,ex:*/,://,b:#,:%,:XCOMM,fb:-,fb:*,fb:+,fb:.,fb:>
 
 
 
@@ -155,3 +200,24 @@ endfunction
 vnoremap <silent> * :call VisualSearch('f')<CR>
 vnoremap <silent> # :call VisualSearch('b')<CR>
 
+
+" --------------------- For Pathogen ---------------------------- "
+" (the following was suggested by pymode)
+" Pathogen load
+"filetype off
+"
+"call pathogen#infect()
+"call pathogen#helptags()
+
+"filetype plugin indent on
+"syntax on
+
+
+" --------------------- For Python-Mode ---------------------------- "
+" Override line numbering
+let g:pymode_options=0
+" Rope seems to cause vim to crash
+" (https://github.com/klen/python-mode/issues/405)
+" I don't need or want rope anyway
+let g:pymode_rope_lookup_project=0
+let g:pymode_rope=0
