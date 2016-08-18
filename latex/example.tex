@@ -1,0 +1,41 @@
+%        File: example.tex
+%     Created: Thu Aug 18 09:00 AM 1830
+% Last Change: Thu Aug 18 09:00 AM 1830
+%
+\documentclass[letterpaper]{article}
+\usepackage[top=1.0in,bottom=1.0in,left=1.0in,right=1.0in]{geometry}
+\usepackage{verbatim}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{longtable}
+\usepackage{amsfonts}
+\usepackage{amsmath}
+\usepackage[usenames]{color}
+\usepackage[
+        naturalnames = true, 
+        colorlinks = true, 
+        linkcolor = Black,
+        anchorcolor = Black,
+        citecolor = Black,
+        menucolor = Black,
+        urlcolor = Blue
+]{hyperref}
+\def\thesection       {\arabic{section}}
+\def\thesubsection     {\thesection.\alph{subsection}}
+
+\author{Ada Lovelace
+        \\ \href{mailto:adalovelace@illinois.edu}{\texttt{adalovelace@illinois.edu}}
+}
+
+\date{}
+\title{A Well Titled Document:\\
+With a Subtitle}
+\begin{document}
+\maketitle
+\section{Intro Section}
+Some text.
+\pagebreak
+Text on the next page.
+\bibliographystyle{ieeetr}
+\bibliography{paper}
+\end{document}
