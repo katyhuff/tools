@@ -23,6 +23,12 @@
 \def\thesection       {\arabic{section}}
 \def\thesubsection     {\thesection.\alph{subsection}}
 
+% Acronyms:
+\usepackage[acronym,toc]{glossaries}
+\usepackage{amsmath}
+\include{acros}
+\makeglossaries
+
 \author{Ada Lovelace
         \\ \href{mailto:adalovelace@illinois.edu}{\texttt{adalovelace@illinois.edu}}
 }
@@ -36,6 +42,9 @@ With a Subtitle}
 Some text.
 \pagebreak
 Text on the next page.
+
+
+% For the bibliography to work, you'll need to have a document called paper.bib
 \bibliographystyle{ieeetr}
 \bibliography{paper}
 \end{document}
