@@ -10,7 +10,7 @@
 \usepackage{longtable}
 \usepackage{amsfonts}
 \usepackage{amsmath}
-\usepackage{hyperref}
+\usepackage[hidelinks]{hyperref}
 \def\thesection       {\arabic{section}}
 \def\thesubsection     {\thesection.\alph{subsection}}
 
@@ -33,8 +33,10 @@ Some text. Include weird acronym for the first time: \gls{PWR}.
 Now, include it for the second time \gls{PWR}.
 Make it plural \glspl{PWR}.
 Use it long, \glsfirst{PWR}.
+
 \pagebreak
-Text on the next page.
+
+Text on the next page with a  citation \cite{whitesides_whitesides_2004}.
 
 
 % For the bibliography to work, you'll need to have a document called paper.bib
