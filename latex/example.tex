@@ -25,7 +25,6 @@
 
 % Acronyms:
 \usepackage[acronym,toc]{glossaries}
-\usepackage{amsmath}
 \include{acros}
 \makeglossaries
 
@@ -39,7 +38,10 @@ With a Subtitle}
 \begin{document}
 \maketitle
 \section{Intro Section}
-Some text.
+Some text. Include weird acronym for the first time: \gls{PWR}.
+Now, include it for the second time \gls{PWR}.
+Make it plural \glspl{PWR}.
+Use it long, \glslong{PWR}.
 \pagebreak
 Text on the next page.
 
