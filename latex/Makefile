@@ -1,7 +1,7 @@
 # Makefile for simple latex docs
 # For more complex systems, consider latexmk
 # To use, replace "paper" below with your main document file root.
-manuscript = paper
+manuscript = example
 references = $(wildcard *.bib)
 latexopt   = -halt-on-error -file-line-error
 
