@@ -7,7 +7,6 @@ alias inkscape="/Applications/Inkscape.app/Contents/Resources/bin/inkscape"
 
 alias strom="echo ................... I think you mean Fastmath!"
 alias fastmath!="echo ..................... I think you mean Strom ... "
-alias ls="ls -G"
 alias sl="ls"
 alias ll="ls -l"
 
