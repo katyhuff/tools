@@ -2,12 +2,12 @@
 "10/2008"
 " ---------For Pathogen -------
 " Pathogen load
-call pathogen#infect()
-call pathogen#helptags()
+"call pathogen#infect()
+"call pathogen#helptags()
 
-filetype plugin indent on
-syntax on
-let g:pymode_debug=1
+"filetype plugin indent on
+"syntax on
+"let g:pymode_debug=1
 " ---------End Pathogen -------
 
 "Don't forget to show the line number"
@@ -83,7 +83,7 @@ set fileformats=unix,dos,mac
 set hidden
 
 " use mouse everywhere"
-set mouse=a
+set mouse-=a
 
 " fold and unfold with \f
 map <Leader>f za
