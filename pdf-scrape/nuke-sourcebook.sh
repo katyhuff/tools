@@ -1,5 +1,5 @@
 #!/bin/bash
-#wget https://neup.inl.gov/SiteAssets/FY2018_Documents/Nuclear.S_E.Education.Sourcebook.2018.pdf -O nuke-sourcebook.pdf
+wget https://neup.inl.gov/SiteAssets/FY2018_Documents/Nuclear.S_E.Education.Sourcebook.2018.pdf -O nuke-sourcebook.pdf
 
 pdfgrep  -h 'Professor|\[[^ ][^ ]*@[^ ][^ ]*\]' "nuke-sourcebook.pdf"| grep -oh '^[-A-Za-z. ]*,\|\[[^ ][^ ]*@[^ ][^ ]*\]'> name-emails.txt
 wc -l name-emails.txt
