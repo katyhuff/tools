@@ -56,7 +56,7 @@ def import_milestones(milestones):
 		req.add_header("Content-Type", "application/json")
 		req.add_header("Accept", "application/json")
 		res = urllib2.urlopen(req)
-		
+
 		data = res.read()
 		res_milestone = json.load(StringIO(data))
 		print "Successfully created milestone %s" % res_milestone["title"]
